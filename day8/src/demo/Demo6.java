@@ -1,4 +1,4 @@
-package com.qianfeng.test;
+package demo;
 /*
  * 多态:一种事物的多种形态.      人==动物==生物            牡丹==花==植物==生物
  * 

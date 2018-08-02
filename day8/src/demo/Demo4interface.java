@@ -1,4 +1,4 @@
-package com.qianfeng.test;
+package demo;
 
 public class Demo4interface {
 	//1.在jdk1.7的接口中可以写方法的实现,方法必须是default或static的

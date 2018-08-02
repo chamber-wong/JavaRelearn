@@ -1,4 +1,4 @@
-package com.qianfeng.test;
+package demo;
 /*
  * 优点:可以提高代码的扩展性,使用之前定义好的功能,后面直接拿来使用,不用再创建新的方法.
  */

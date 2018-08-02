@@ -1,4 +1,4 @@
-package com.qianfeng.test;
+package demo;
 /*
  *多态下的--一定要是多态
  *向上转型:相当于自动类型转换,由低类型到高类型
