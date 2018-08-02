@@ -1,59 +1,30 @@
-package demo;
+package com.qianfeng.test;
 
 public class Demo3 {
-}
-abstract class Animal{
-	public abstract void job();
-}
-interface DaoMang{
-	public void daoMang();
-}
-class FangBaoDog extends Animal{
-
-	@Override
-	public void job() {
-		// TODO Auto-generated method stub
-		
+	public static void main(String[] args) {
+		//实例:求圆与矩形的面积?
 	}
+}
+
+abstract class Shape{
+	public abstract double getArea();
+}
+
+class Circle extends Shape{
+	double r;
+	final double PI = 3.14;
 	
+	public double getArea() {
+		
+		return PI*r*r;
+	}
 }
 
-class DaoMangDog extends Animal implements DaoMang{
-
-	@Override
-	public void job() {
-		// TODO Auto-generated method stub
-		
+class Rectangle extends Shape{
+	double height;
+	double width;
+	@Override //这里是重写的方法
+	public double getArea() {
+		return height*width;
 	}
-
-	@Override
-	public void daoMang() {
-		// TODO Auto-generated method stub
-		
-	}
-	
-}
-class SouJiuDog extends Animal{
-
-	@Override
-	public void job() {
-		// TODO Auto-generated method stub
-		
-	}
-	
-}
-class Dokey extends Animal implements DaoMang{
-
-	@Override
-	public void daoMang() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void job() {
-		// TODO Auto-generated method stub
-		
-	}
-	
 }

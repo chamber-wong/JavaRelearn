@@ -1,52 +1,24 @@
-package demo;
+package com.qianfeng.test;
 
 public class Demo1 {
-	public static void main(String[] args) {
-		Circle circle = new Circle(10.0);
-		System.out.println(circle.getArea());
-		Rectangle rectangle = new Rectangle(10,10);
-		System.out.println(rectangle.getArea());
-		
-	}
-}
-abstract class Shape{
-	double width;
-	public Shape(double width) {
-		// TODO Auto-generated constructor stub
-		this.width = width;
-	}
-	public abstract double getArea();
-}
-class Circle extends Shape{
-
-	final double PI = 3.14;
-	public Circle(double width) {
-		super(width);
-		// TODO Auto-generated constructor stub
-	}
-
-	@Override
-	public double getArea() {
-		// TODO Auto-generated method stub
-		return PI*(width/2)*(width/2);
-	}
-	
-}
-class Rectangle extends Shape{
-	double height;
-	public Rectangle(double width) {
-		super(width);
-		// TODO Auto-generated constructor stub
-	}
-	public Rectangle(double width,double hight) {
-		// TODO Auto-generated constructor stub
-		this(width);
-	}
-
-	@Override
-	public double getArea() {
-		// TODO Auto-generated method stub
-		return width*height;
-	}
-	
+	/*
+	 * 知识总结:
+	 * 1.封装性---中上
+	 * 		>封装性的实现-属性的私有化
+	 * 		>set,get
+	 * 2.继承---会
+	 * 		>继承的定义
+	 * 		>继承的作用
+	 * 		>继承的代码实现
+	 * 		>重写
+	 * 		>继承中使用构造方法
+	 * 3.单例----会
+	 * 		>定义
+	 * 		>单例的实际应用
+	 * 4.final----中
+	 * 		>类,方法,变量
+	 * 5.Runtime----了解
+	 * 		>运行时
+	 * 6.作业
+	 */
 }

@@ -1,14 +1,16 @@
-package demo;
+package com.qianfeng.test;
 
 public class Demo6 {
 	public static void main(String[] args) {
+		//Ã¿¸ö Java Ó¦ÓÃ³ÌĞò¶¼ÓĞÒ»¸ö Runtime ÀàÊµÀı£¬Ê¹Ó¦ÓÃ³ÌĞòÄÜ¹»ÓëÆäÔËĞĞµÄ»·¾³ÏàÁ¬½Ó¡£
+		//¿ÉÒÔÍ¨¹ı getRuntime ·½·¨»ñÈ¡µ±Ç°ÔËĞĞÊ±¡£ 
+        //Ó¦ÓÃ³ÌĞò²»ÄÜ´´½¨×Ô¼ºµÄ Runtime ÀàÊµÀı¡£
+
 		Runtime runtime = Runtime.getRuntime();
-		//
-		System.out.println(runtime.freeMemory()/1024./1024);
-		//ä½¿ç”¨çš„æ€»å†…å­˜é‡
-		System.out.println(runtime.totalMemory()/1024./1024);
-		//æœ€å¤§å¯ä»¥ä½¿ç”¨çš„å†…å­˜é‡
-		System.out.println(runtime.maxMemory()/1024./1024);
 		
+		//µ¥Î»ÊÇ×Ö½Ú
+		System.out.println(runtime.freeMemory()/1024./1024);//¿ÕÏĞµÄ
+		System.out.println(runtime.totalMemory()/1024./1024);//Ê¹ÓÃµÄ×ÜÄÚ´æÁ¿
+		System.out.println(runtime.maxMemory()/1024./1024);//¿ÉÒÔÊ¹ÓÃµÄ×î´óÄÚ´æÁ¿
 	}
 }

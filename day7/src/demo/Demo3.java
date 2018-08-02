@@ -1,40 +1,81 @@
-package demo;
-
+package com.qianfeng.test;
+/*
+ * ÖØĞ´:µ±×ÓÀàÓĞÓë¸¸ÀàÍ¬Ãû(·½·¨Ãû,²ÎÊıµÈÍêÈ«ÏàÍ¬)µÄ·½·¨,ÎÒÃÇ³ÆÎªÖØĞ´.
+ * ×¢Òâµã:Ïàµ±ÓÚ×ÓÀàµÄÍ¬Ãû·½·¨½«¸¸ÀàµÄ¸²¸ÇÁË,²»»áÔÙÈ¥µ÷ÓÃ¸¸ÀàµÄ·½·¨.
+ * 
+ * ×÷ÓÃ:ÔÚ²»¸Ä±ä¸¸Àà·½·¨Ãû×ÖµÄÇ°ÌáÏÂ,ÔÚ¸¸ÀàÔ­ÓĞ·½·¨µÄ¹¦ÄÜ»ù´¡ÉÏ,ÊµÏÖÒ»Ğ©×Ô¼ºµÄ¹¦ÄÜ.ÊµÏÖÁË¶ÔÔ­ÓĞ¹¦ÄÜµÄÀ©³ä.
+ * 
+ * this:ÊÇÒ»ÖÖÒıÓÃÊı¾İÀàĞÍ,´ú±íµ±Ç°µÄ¶ÔÏó.±£´æµÄÊÇµ±Ç°¶ÔÏóµÄµØÖ·
+ * super:²»ÊÇÒ»ÖÖÒıÓÃÊı¾İÀàĞÍ.¿ÉÒÔÍ¨¹ısuperµ÷ÓÃ¸¸ÀàµÄ³ÉÔ±
+ * 
+ * ×¢ÒâÊÂÏî:
+ * 1.Ë½ÓĞ·½·¨²»ÄÜ±»ÖØĞ´
+ * 2.×ÓÀàµÄÍ¬Ãû·½·¨µÄÈ¨ÏŞ´óÓÚµÈÓÚ¸¸ÀàµÄÍ¬Ãû·½·¨
+ * 3.¾²Ì¬µÄ·½·¨Ö»ÄÜ¸²¸Ç¾²Ì¬µÄ·½·¨
+ */
 public class Demo3 {
-
+	public static void main(String[] args) {
+		Iphone iphone = new Iphone();
+		iphone.color = "Ãµ¹å½ğ";//µ÷ÓÃ¸¸ÀàµÄ³ÉÔ±±äÁ¿
+		iphone.gui = "¹ó";//µ÷ÓÃµÄ×Ô¼ºµÄ³ÉÔ±±äÁ¿
+		/*
+		 * ×ÓÀàµ÷ÓÃ¸¸Àà·½·¨µÄÔ­Àí:Ê×ÏÈÓÉÒıÓÃÕÒµ½µ±Ç°µÄ×ÓÀà¶ÔÏó,ÔÚµ±Ç°µÄ¶ÔÏóÀïÕÒÕâ¸ö·½·¨,ÕÒµ½ÁË,Ö±½Óµ÷ÓÃ.Èç¹ûÃ»ÓĞ,ÔÙÈ¥
+		 * ¸¸ÀàÖĞÕÒ,ÕÒµ½ÁËµ÷ÓÃ,ÕÒ²»µ½ÔÙ¼ÌĞøÏòÉÏÕÒ,Ò»Ö±ÕÒµ½Object,Èç¹û»¹ÊÇÃ»ÓĞÕÒµ½,ËµÃ÷Ã»ÓĞÕâ¸ö·½·¨.
+		 */
+		iphone.callPhone();//µ÷ÓÃµÄ¸¸ÀàµÄ³ÉÔ±·½·¨
+		iphone.fangShui();//µ÷ÓÃ×Ô¼ºµÄ³ÉÔ±·½·¨
+	}
 }
-class Phone{
+
+//×¢Òâ:Ò»¸öÀàÈç¹ûÃ»ÓĞĞ´¸¸Àà,Ä¬ÈÏÊÇObject
+class Phone {
+	//ÌáÈ¡µÄ¹²Í¬µÄÊôĞÔºÍĞĞÎª
 	String color;
 	int model;
-	
-	public void callPhone() {
-		System.out.println("æ‰“ç”µè¯");
+	public void callPhone(){
+		System.out.println("´òµç»°");
 	}
 	
+	public static void play(){
+		
+	}
 }
-//åˆ›å»ºiphoneç±»
-class IPhone extends Phone{
+
+//´´½¨IphoneÀà
+//×ÓÀà  extends ¸¸Àà
+class Iphone extends Phone{
 //	String color;
 //	int model;
 	String gui;
 	
-	public void fangshui() {
-		System.out.println("é˜²æ°´");
+	public void fangShui(){
+		
+		System.out.println("·ÀË®");
 	}
-//	public void callPhone() {
-//		System.out.println("æ‰“ç”µè¯");
-//	}
+	
+	//ÖØĞ´ÁË¸¸ÀàµÄ·½·¨
+	public void callPhone(){
+		//this.callPhone();//µ÷µ½µÄÊÇ±¾¶ÔÏóµÄcallPhone·½·¨--ËÀÑ­»·
+		super.callPhone();//Ö±½Óµ÷ÓÃµÄÊÇ¸¸ÀàµÄ·½·¨
+		
+		System.out.println("×Ô¼ºÌØÓĞµÄ¹¦ÄÜ");
+	}
+	
+	//¾²Ì¬µÄ·½·¨Ö»ÄÜ¸²¸Ç¾²Ì¬µÄ 
+	public static void play(){
+		
+	}
 }
-//åˆ›å»ºåä¸ºç±»
-class HUAWEI extends Phone{
+//´´½¨HuaWeiÀà
+class HuaWei extends Phone{
 //	String color;
 //	int model;
-	
-//	public void callPhone() {
-//		System.out.println("æ‰“ç”µè¯");
+//	public void callPhone(){
+//		System.out.println("´òµç»°");
 //	}
 	
-	public void nv() {
-		System.out.println("ç‰›é€¼");
+	//ÌØÓĞµÄ·½·¨
+	public void Niu(){
+		System.out.println("Å£");
 	}
 }

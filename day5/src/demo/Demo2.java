@@ -1,46 +1,53 @@
-package demo;
+package com.qianfeng.test;
 
 public class Demo2 {
-
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		int[] arr = new int[] {20,15,100,80,59,79};
-		Demo2 demo2 = new Demo2();
-		demo2.sort(arr);
-		for(int a : arr) {
-			System.out.print(a+" ");
-		}
-		System.out.println("æˆç»©ä¸º80çš„äººä¸º"+demo2.erFenSearch(arr, 80));
+		/*
+		 * Ò»Î¬Êı×é:ÄÚ²¿Ö±½Ó´æ´¢µÄÊÇÊı¾İ
+		 * ¶şÎ¬Êı×é:ÄÚ²¿´æ´¢µÄÊÇ¶à¸öÒ»Î¬Êı×éµÄµØÖ·(¶şÎ¬Êı×éÖĞ¾ÍÊÇ¶à¸öÒ»Î¬Êı×é)
+		 * 
+		 */
 		
+		//´´½¨Ò»Î¬Êı×é
+		int[] arr = new int[]{3,4,5};
 		
-	}
-	
-	public int erFenSearch(int[] arrs,int key) {
-		int l = 0;
-		int h = arrs.length-1;
-		while(l<=h) {
-			int m = (h+l)>>1;
-			if (arrs[m] == key) {
-				return m;
-			}else if (arrs[m] < key) {
-				l = m+1;
-			}else if (arrs[m] > key) {
-				h = m -1;
+		//´´½¨¶şÎ¬Êı×é--¿ÕµÄ¶şÎ¬Êı×é
+		/*
+		 * ¶şÎ¬Êı×éÓëÒ»Î¬Êı×éÒ»Ñù¶¼ÊÇÊı¾İÀàĞÍ
+		 * ¶şÎ¬Êı×éÀàĞÍµÄ¹¹³É:Êı¾İÀàĞÍ+[]+[]
+		 * =ºóÃæµÄ¹¹³É:new + [Ò»Î¬Êı×éµÄ¸öÊı] +[Ò»Î¬Êı×éÖĞÔªËØµÄ¸öÊı]
+		 * ×¢Òâµã:µÚÒ»¸ö[]ÖĞ±ØĞëÌî,µÚ¶ş¸ö[]ÖĞµÄÖµ¿ÉÒÔÊ¡ÂÔ.Èç¹ûĞ´ÁË,´ú±íÒ»¸ö½¨ÒéµÄÖµ
+		 */
+		int[][] arr1 = new int[2][];
+		
+		//´æÖµ--¸ù¾İÏÂ±ê
+		arr1[0] = new int[]{3,4,5};
+		arr1[1] = new int[]{3,4};
+		
+		//È¡Öµ  ¹¹³É:Êı×éµÄÃû×Ö+[Ò»Î¬Êı×éµÄÏÂ±ê]+[Ò»Î¬Êı×éÖĞÔªËØµÄÏÂ±ê]
+		int value = arr1[0][0];
+		System.out.println(value);
+		
+		//±éÀú
+		for (int i = 0; i < arr1.length; i++) {//¿ØÖÆµÄÒ»Î¬Êı×éµÄ¸öÊı
+			for(int j=0;j<arr1[i].length;j++){//¿ØÖÆµÄÊÇÒ»Î¬Êı×éµÄÔªËØ
+				System.out.print(arr1[i][j]);
 			}
+			System.out.println();
 		}
-		return -1;
-	}
-	
-	public void sort(int[] arr) {
-		for (int i = 0; i < arr.length-1; i++) {
-			for (int j = 0; j < arr.length-1; j++) {
-				if (arr[j] > arr[j+1]) {
-					arr[j] = arr[j] ^ arr[j+1];
-					arr[j+1] = arr[j] ^ arr[j+1];
-					arr[j] = arr[j] ^ arr[j+1];
-				}
+		
+		/*
+		 * ÔöÇ¿forÑ­»·:¿ªÊ¼Ñ­»·ºóÏÈ´ÓÊı×éÖĞÈ¡³öµÚÒ»¸öÔªËØ,·ÅÈë:Ç°ÃæµÄ±äÁ¿ÖĞ.µ±´ÎÑ­»·ÔÚÊ¹ÓÃ±äÁ¿µÄÊ±ºò,Ê¹ÓÃµÄ¾ÍÊÇÕâ¸öÖµ.
+		 * µÚÒ»´ÎÑ­»·½áÊø»á×Ô¶¯´ÓÊı×éÖĞÈ¡³öµÚ¶ş¸öÔªËØ,ÔÙ´Î·ÅÈë:Ç°ÃæµÄ±äÁ¿ÖĞ,ÒÀ´Î½øĞĞ,Ö±µ½ËùÓĞµÄÔªËØ±éÀúÍê.Í£Ö¹Ñ­»·.
+		 */
+		for (int[] is : arr1) {
+			for (int i : is) {
+				System.out.print("ÔöÇ¿forÑ­»·:"+i);
 			}
+			System.out.println();
 		}
+		
+		//ÆäËûµÄ´´½¨·½·¨:
+		int[][] arr2 = {{4,5},{6,7,8}};
 	}
-
 }

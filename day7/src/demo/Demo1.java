@@ -1,79 +1,19 @@
-package demo;
-/**
- * å°„å‡»æ¸¸æˆ
- * @author å¼„é£Ž
- *
- */
+package com.qianfeng.test;
+
 public class Demo1 {
-
-	public static void main(String[] args) {
-		/*
-		 * å¼€æžªå°„å‡»
-		 */
-		Gun gun = new Gun();
-		gun.addBullet(5);
-		gun.shoot();
-	}
-
+	/*
+	 * ÖªÊ¶¸´Ï°:
+	 * 1.×÷Òµ½²½â
+	 * 2.staticÐÞÊÎ³ÉÔ±
+	 * 		>¾ßÌå½²µÄstaticÐÞÊÎ³ÉÔ±
+	 * 		>static×÷ÓÃ×Ü½á
+	 * 3.¹¹Ôì·½·¨
+	 * 		>×Ô¼º´´½¨¹¹Ôì·½·¨
+	 * 		>this
+	 * 4.´úÂë¿é¶ù
+	 * 		>¾²Ì¬´úÂë¿é¶ù---×öÀàµÄ³õÊ¼»¯¹¤×÷
+	 * 		>¹¹Ôì´úÂë¿é¶ù---×ö¶ÔÏóµÄ³õÊ¼»¯¹¤×÷
+	 */
 }
 
-class Gun{
-	//private:æ˜¯ä¿®é¥°è¯,è¢«ä»–ä¿®é¥°çš„æˆå‘˜åªåœ¨å½“å‰ç±»ä¸­å¯è§.
-	private int bulletNumber;
-	private int height;
-	private int weight;
-	private String name;
-	
-	//å°„å‡»æ–¹æ³•
-	public void shoot() {
-		if (bulletNumber > 0) {
-			--bulletNumber;
-		}
-		System.out.println("å‰©ä½™çš„å­å¼¹æ•°é‡:"+ bulletNumber);
-	}
-	
-	public void addBullet(int number) {
-		//è¿‡æ»¤
-		if (number >= 0) {
-			bulletNumber = number;
-		}else {
-			bulletNumber = 0;
-		}
-	}
 
-	public int getBulletNumber() {
-		return bulletNumber;
-	}
-
-	public void setBulletNumber(int bulletNumber) {
-		this.bulletNumber = bulletNumber;
-	}
-
-	public int getHeight() {
-		return height;
-	}
-
-	public void setHeight(int height) {
-		this.height = height;
-	}
-
-	public int getWeight() {
-		return weight;
-	}
-
-	public void setWeight(int weight) {
-		this.weight = weight;
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-	
-	
-	
-	
-}

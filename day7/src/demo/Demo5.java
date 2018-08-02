@@ -1,82 +1,110 @@
-package demo;
-
-
-/**
- * å•ä¾‹æ¨¡å¼
- * æ¶æ±‰å¼-åœ¨å®šä¹‰å˜é‡çš„åŒæ—¶å®Œæˆåˆå§‹åŒ–
- * @author å¼„é£
- *
+package com.qianfeng.test;
+/*
+ * Éè¼ÆÄ£Ê½:Ç°ÈË×Ü½á³öÀ´µÄ¾­Ñé,±»ºóÈËÖ±½ÓÄÃÀ´Ê¹ÓÃ.
+ * ³£ÓÃµÄÉè¼ÆÄ£Ê½:23ÖÖ,ÎÒÃÇÒªÑ§µÄÓĞµ¥Àı,Ä£°å,×°ÊÎ,ÊÊÅäÆ÷,¹¤³§,´úÀíµÈ
+ * µ¥ÀıÉè¼ÆÄ£Ê½:Ò»¸öÀàÖ»ÔÊĞíÓĞÒ»¸ö¶ÔÏó,½«Õâ¸ö¶ÔÏó×÷ÎªÒ»¸öÈ«¾ÖµÄ·ÃÎÊµã,Ìá¹©³öÈ¥¹©´ó¼ÒÊ¹ÓÃ.
+ * ·ÖÎö:
+ * 1.ÓÃ»§Ö»ÄÜÓĞÒ»¸ö¶ÔÏó
+ * 2.È«¾ÖµÄ·ÃÎÊµã:µÃµ½µÄ¶ÔÏó¾ÍÊÇÈ«¾ÖµÄ·ÃÎÊµã. ÈçºÎ×öµ½È«¾Ö?ÈÃstaticÈ¥ĞŞÊÎ
+ * 3.ÈçºÎÌá¹©³öÈ¥?
+ * 4.¹©´ó¼ÒÊ¹ÓÃ?--µ¥ÀıµÄ¹¦ÄÜ
+ * 
+ * 
+  * µ¥ÀıÀàµÄ×÷ÓÃ:1.¿ÉÒÔÊµÏÖÁ½¸ö¶ÔÏóÖ®¼äµÄ´«Öµ
+  * 2.¿ÉÒÔÔÚÈ«¾Ö·¶Î§ÄÚµ÷ÓÃºÜ¶àµÄ¹¦ÄÜ.
+ * ºÃ´¦:¿ÉÒÔÈÃÁ½¸ö¶ÔÏóÔÚÍêÈ«Ã»ÓĞ¹ØÏµµÄÇ°ÌáÏÂ,ÊµÏÖÖµµÄ´«µİ,½µµÍÁËñîºÏĞÔ,Ìá¸ßÁËÄÚ¾ÛĞÔ
+ * 
+ * ñîºÏĞÔ,ÄÚ¾ÛĞÔÔÚÎ¢¹ÛÉÏËµ:ÃèÊöµÄÊÇÀàÓëÀàÖ®¼äµÄ¹ØÏµ
+ * ºÃ´¦:ÎÒÃÇÓ¦¸Ã¾¡Á¿Ìá¸ßÄÚ¾ÛĞÔ,¼õÉÙñîºÏĞÔ,¿ÉÒÔÌá¸ß³ÌĞòµÄ½¡×³ĞÔ,Ôö¼Ó´úÂëµÄ¿ÉÒÆÖ²ĞÔ,·½±ãÊµÏÖÄ£¿é¶ù»¯±à³Ì
+ * 
+ * ÈçºÎ×öµ½µÍñîºÏ¸ßÄÚ¾Û?
+ * ÔÚ´¦ÀíÀàÓëÀà¹ØÏµµÄÊ±ºò,ÈÃÀàÖ®¼äµÄ¹ØÏµÔ½½ôÃÜñîºÏĞÔÔ½¸ß,ÄÚ¾ÛĞÔÔ½µÍ.·´Ö®,¹ØÏµÔ½ËÉÉ¢ñîºÏĞÔÔ½µÍ,ÄÚ¾ÛĞÔÔ½¸ß.
  */
+
+
+//´´½¨µ¥ÀıÀà
+//¶öººÊ½-ÔÚ¶¨Òå±äÁ¿µÄÍ¬Ê±Íê³É³õÊ¼»¯
 class SingleInstance{
-	//åœ¨ç±»çš„å†…éƒ¨åˆ›å»ºä¸€ä¸ªå½“å‰ç±»å‹çš„å±æ€§å¹¶èµ‹å€¼--åœ¨ç±»çš„å†…éƒ¨å¾—åˆ°äº†å½“å‰ç±»çš„ä¸€ä¸ªå¯¹è±¡
-	//å°†å˜é‡ç§æœ‰åŒ–,è®©å¤–ç•Œæ— æ³•ç›´æ¥è®¿é—®  ç»™å˜é‡ç”¨staticä¿®é¥°è®©å®ƒæˆä¸ºå…¨å±€çš„è®¿é—®ç‚¹
+	//2.ÔÚÀàµÄÄÚ²¿´´½¨Ò»¸öµ±Ç°ÀàĞÍµÄÊôĞÔ²¢¸³Öµ--ÔÚÀàµÄÄÚ²¿µÃµ½ÁËµ±Ç°ÀàµÄÒ»¸ö¶ÔÏó
+	//½«±äÁ¿Ë½ÓĞ»¯,ÈÃÍâ½çÎŞ·¨Ö±½Ó·ÃÎÊ    ¸ø±äÁ¿ÓÃstaticĞŞÊÎÈÃËû³ÉÎªÈ«¾ÖµÄ·ÃÎÊµã
 	private static SingleInstance singleInstance = new SingleInstance();
 	
-	//å°†æ„é€ æ–¹æ³•ç§æœ‰åŒ–
+	//1.½«¹¹Ôì·½·¨Ë½ÓĞ»¯
 	private SingleInstance() {
 		
 	}
-	//ä½¿ç”¨å…¬å…±çš„æ–¹æ³•å°†å˜é‡æä¾›å‡ºå»,å¹¶å°†æ–¹æ³•è®¾ç½®æˆé™æ€çš„
-	public static SingleInstance getSingleInstance() {
+	
+	//3.Ê¹ÓÃ¹«¹²µÄ·½·¨½«±äÁ¿Ìá³ö³öÈ¥,²¢½«·½·¨ÉèÖÃ³É¾²Ì¬µÄ
+	public static SingleInstance getInstance(){
 		return singleInstance;
 	}
 }
-/**
- * å•ä¾‹æ¨¡å¼
- * æ‡’æ±‰å¼-å¼€å§‹åªæ˜¯å®šä¹‰å˜é‡,ä»€ä¹ˆæ—¶å€™ä½¿ç”¨ä»€ä¹ˆæ—¶å€™èµ‹å€¼
- * @author å¼„é£
- *
- */
+//ÀÁººÊ½-¿ªÊ¼Ö»ÊÇ¶¨Òå±äÁ¿,Ê²Ã´Ê±ºòÊ¹ÓÃÊ²Ã´Ê±ºò¸³Öµ
 class SingleInstance1{
-	//åœ¨ç±»çš„å†…éƒ¨åˆ›å»ºä¸€ä¸ªå½“å‰ç±»å‹çš„å±æ€§å¹¶èµ‹å€¼--åœ¨ç±»çš„å†…éƒ¨å¾—åˆ°äº†å½“å‰ç±»çš„ä¸€ä¸ªå¯¹è±¡
-	//å°†å˜é‡ç§æœ‰åŒ–,è®©å¤–ç•Œæ— æ³•ç›´æ¥è®¿é—®  ç»™å˜é‡ç”¨staticä¿®é¥°è®©å®ƒæˆä¸ºå…¨å±€çš„è®¿é—®ç‚¹
+	//2.ÔÚÀàµÄÄÚ²¿´´½¨Ò»¸öµ±Ç°ÀàĞÍµÄÊôĞÔ²¢¸³Öµ--ÔÚÀàµÄÄÚ²¿µÃµ½ÁËµ±Ç°ÀàµÄÒ»¸ö¶ÔÏó
+	//½«±äÁ¿Ë½ÓĞ»¯,ÈÃÍâ½çÎŞ·¨Ö±½Ó·ÃÎÊ    ¸ø±äÁ¿ÓÃstaticĞŞÊÎÈÃËû³ÉÎªÈ«¾ÖµÄ·ÃÎÊµã
 	private static SingleInstance1 singleInstance = null;
 	
-	//å°†æ„é€ æ–¹æ³•ç§æœ‰åŒ–
+	//1.½«¹¹Ôì·½·¨Ë½ÓĞ»¯
 	private SingleInstance1() {
 		
 	}
-	//ä½¿ç”¨å…¬å…±çš„æ–¹æ³•å°†å˜é‡æä¾›å‡ºå»,å¹¶å°†æ–¹æ³•è®¾ç½®æˆé™æ€çš„
-	public static SingleInstance1 getSingleInstance() {
+	
+	//3.Ê¹ÓÃ¹«¹²µÄ·½·¨½«±äÁ¿Ìá³ö³öÈ¥,²¢½«·½·¨ÉèÖÃ³É¾²Ì¬µÄ
+	public static SingleInstance1 getInstance(){
 		if (singleInstance == null) {
 			singleInstance = new SingleInstance1();
 		}
+		
 		return singleInstance;
 	}
 	
-	//å•ä¾‹çš„åŠŸèƒ½åŒº
-	int num;
 	
+	//4.µ¥ÀıµÄ¹¦ÄÜÇø
+	int num;
 }
+
 public class Demo5 {
 	public static void main(String[] args) {
-		SingleInstance sInstance  = SingleInstance.getSingleInstance();
-		SingleInstance sInstance1  = SingleInstance.getSingleInstance();
-		System.out.println(sInstance == sInstance1);
-	
-		//å®ä¾‹:å®Œæˆçš„åŠŸèƒ½,æŠŠAä¸­num1å€¼ä¼ ç»™Bä¸­çš„num2
+		SingleInstance1 singleInstance1 = SingleInstance1.getInstance();
+		SingleInstance1 singleInstance2 = SingleInstance1.getInstance();
+		System.out.println(singleInstance1 == singleInstance2);//true,ËµÃ÷»ñÈ¡µ½µÄÊÇÍ¬Ò»¸ö¶ÔÏó
 		
+		//ÊµÀı:Íê³ÉµÄ¹¦ÄÜ:½«AÀàÖĞnum1µÄÖµ´«¸øBÀà¶ÔÏóµÄnum2
 		A a = new A();
-		a.num1 = 5;
+		a .num1 = 4;
+		
 		B b = new B();
 		
+		//Ö±½Ó¸³Öµ,Ò»°ãÀàµÄ³ÉÔ±±äÁ¿ÊÇË½ÓĞµÄ,ËùÒÔ²»ÍÆ¼ö
+//		b.num2 = a.num1;
+//		//Í¨¹ı´«²Î¼ä½Ó¸³Öµ
+//		b.test(a);
+		//Í¨¹ıµ¥ÀıÊµÏÖ´«Öµ
 		a.ceshi1();
 		b.ceshi2();
-		
 	}
 }
-//æµ‹è¯•å•ä¾‹çš„åŠŸèƒ½
+
+//²âÊÔµ¥ÀıµÄ¹¦ÄÜ
 class A{
 	int num1;
-	public void ceshi1() {
-		SingleInstance1 singleInstance1 = SingleInstance1.getSingleInstance();
-		singleInstance1.num = num1;
+	//²âÊÔÍ¨¹ıµ¥Àı´«Öµ
+    public void ceshi1() {
+		SingleInstance1 singleInstance = SingleInstance1.getInstance();
+		singleInstance.num = num1;
 	}
 }
+
 class B{
 	int num2;
-	public void ceshi2() {
-		SingleInstance1 singleInstance1 = SingleInstance1.getSingleInstance();
-		num2 = singleInstance1.num;
+	//Í¨¹ı´«²Î¸³Öµ
+	public void test(A a){
+		num2 = a.num1;
+	}
+	//²âÊÔÍ¨¹ıµ¥Àı´«Öµ
+	public void ceshi2(){
+		SingleInstance1 singleInstance = SingleInstance1.getInstance();
+		num2 = singleInstance.num;
 	}
 }

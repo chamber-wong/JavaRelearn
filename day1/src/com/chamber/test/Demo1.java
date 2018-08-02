@@ -1,16 +1,19 @@
-//导包 package是导包的指令
-package com.chamber.test;
-//被public标记的是主类，.java文件的名字与之类的名字一致
-/*
- * 多行注释
- * public的作用：是公共的，被public修饰的内容可以被整个工程可见
- * 
- * 注意点：所有代码的执行顺序都是从上往下
- */
+package com.qianfeng.test;
+
 public class Demo1 {
-	//写程序的入口
-	public static void main(String[] args) {
-		//""引起来的是字符串 ''是字符
-		System.out.println("Hello!!");
-	}
+	/*
+	 * 知识总结:
+	 * 1.Java的简介
+	 * 2.jdk的安装
+	 * 3.配置环境变量
+	 * 4.eclipse运行程序
+	 * 5.基本语法:
+	 *       >关键字
+	 *       >标识符
+	 *       >注解
+	 *       >常量
+	 *       >变量
+	 *       >进制转换
+	 *       >存储单位
+	 */
 }
