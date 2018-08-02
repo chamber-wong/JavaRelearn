@@ -1,4 +1,4 @@
-package com.qianfeng.test;
+package demo;
 
 public class Demo6 {
 	public static void main(String[] args) {

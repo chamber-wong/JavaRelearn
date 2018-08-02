@@ -1,4 +1,4 @@
-package com.qianfeng.test;
+package demo;
 /*
  * 在继承中使用构造方法
  * 
