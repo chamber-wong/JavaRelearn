@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class CDStore {
 	private static CDStore cdStore = null;
-	ArrayList<DVDBean> list = new ArrayList<>();
+	private ArrayList<DVDBean> list = new ArrayList<>();
 	
 	private CDStore() {
 		DVDBean dvd1 = new DVDBean("风声鹤唳", 1, 0);
