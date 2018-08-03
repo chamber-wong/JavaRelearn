@@ -1,29 +1,39 @@
 package homework;
-
-class Fu
+class Circle
 {
-	boolean show(char a)
+	private static double pi=3.14;
+	private double radius;
+	public Circle(double r)
 	{
-		System.out.println(a);
-		return true;
+		radius=r;
+	}
+	public static double compare(Circle[] cir)
+	{
+		double max = cir[0].radius;
+		for (Circle circle : cir) {
+			if (max < circle.radius ) {
+				max = circle.radius;
+			}
+		}
+		return max;
+
+		//程序代码//其实就是在求数组中的最大值。
+		
+	}
+	private double compare() {
+		
+		return radius;
+		
 	}
 }
-public class Demo extends Fu
+class TC
 {
 	public static void main(String[] args)
 	{
-		int i=0;
-		Fu f=new Demo();
-		Demo d=new Demo();
-		for(f.show('A'); f.show('B')&&(i<2);f.show('C'))
-		{
-			i++;
-			d.show('D');
-		}	
-	}
-	boolean show(char a)
-	{
-		System.out.println(a);
-		return false;
+		Circle cir[]=new Circle[3];//创建了一个类类型数组。
+		cir[0]=new Circle(1.0);
+		cir[1]=new Circle(2.0);
+		cir[2]=new Circle(4.0);
+		System.out.println("最大的半径值是："+Circle.compare(cir));
 	}
 }
