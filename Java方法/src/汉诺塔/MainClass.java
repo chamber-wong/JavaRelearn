@@ -1,6 +1,7 @@
 package 汉诺塔;
 
 public class MainClass {
+	//不懂原理,需要继续学习
 	public static void main(String[] args) {
         int nDisks = 3;
         doTowers(nDisks, 'A', 'B', 'C');
