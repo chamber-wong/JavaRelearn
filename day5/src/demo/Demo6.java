@@ -1,4 +1,4 @@
-package com.qianfeng.test;
+package demo;
 /*
  * 设计一个类需要遵守的规则:
  * 1.类名:遵守大驼峰原则

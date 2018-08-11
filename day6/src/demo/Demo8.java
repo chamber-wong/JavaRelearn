@@ -1,4 +1,4 @@
-package com.qianfeng.test;
+package demo;
 /*
  * 静态代码块儿:随着类的加载而加载,在整个程序的过程中只执行一次.执行顺序优先有main
  * 构成: static+{代码}

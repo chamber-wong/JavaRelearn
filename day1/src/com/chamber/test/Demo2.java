@@ -1,4 +1,4 @@
-package com.qianfeng.test;
+package com.chamber.test;
 /*
  * 数据类型:决定了变量所占内存空间的大小.并且给变量确定了类型.
  * 分类:有符号型(有负数,0,正数)和无符号型(只有0和正数)

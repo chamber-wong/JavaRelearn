@@ -1,4 +1,4 @@
-package com.qianfeng.test;
+package demo;
 /*
  * 总结成员变量的特点:
  * 1.在创建对象的时候被赋予默认值

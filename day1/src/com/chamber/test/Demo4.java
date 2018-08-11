@@ -1,4 +1,4 @@
-package com.qianfeng.test;
+package com.chamber.test;
 /*
  * ½²½â·ÖÖ§Óï¾ä
  * 

@@ -1,4 +1,4 @@
-package com.qianfeng.test;
+package demo;
 
 import java.util.Scanner;//µ¼ÈëÀà
 

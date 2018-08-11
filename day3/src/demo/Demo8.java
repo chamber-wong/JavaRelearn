@@ -1,4 +1,4 @@
-package com.qianfeng.test;
+package demo;
 /*
  * 局部变量:我们将定义在函数,for,if中的变量及形参称为局部变量
  * 全局变量:我们一般把直接定义在类中的变量称为全局变量

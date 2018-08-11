@@ -1,4 +1,4 @@
-package com.qianfeng.test;
+package demo;
 /*
  * 数组:用来存储数据的
  * 数组的解释,是一种引用数据类型,可以同时存储多个相同类型的数据.

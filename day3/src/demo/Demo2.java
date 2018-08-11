@@ -1,4 +1,4 @@
-package com.qianfeng.test;
+package demo;
 /*
  * Ñ­»·Óï¾ä:
  */
