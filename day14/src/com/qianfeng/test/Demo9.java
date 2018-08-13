@@ -3,6 +3,7 @@ package com.qianfeng.test;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
+import java.util.Map.Entry;
 import java.util.Set;
 
 /*
@@ -48,5 +49,10 @@ public class Demo9 {
 			System.out.println("key:"+entry.getKey()+"   value:"+entry.getValue());
 		}
 		System.out.println(map);
+		
+		//使用foreach  遍历方法三
+		for (Entry<String, String> entry : map.entrySet()) {
+			System.out.println("key:"+entry.getKey()+"   value:"+entry.getValue());
+		}
 	}
 }
