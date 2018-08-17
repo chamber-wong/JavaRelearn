@@ -9,7 +9,7 @@ import java.util.ArrayList;
 
 public class HomeWord2 {
 	public static void main(String[] args) {
-		File file = new File("src/com/qianfeng/homework/test.txt");
+		File file = new File("src/com/qianfeng/homework/test.jpg");
 //		System.out.println(file.getPath());
 
 //		File1 file1 = new File1(file, 1);
@@ -114,7 +114,7 @@ class File1 {
 		File file1;
 		FileOutputStream fos = null;
 		try {
-			String newFile = file.getParent() + "/test(1).txt";
+			String newFile = file.getParent() + "/test1.jpg";
 			file1 = new File(newFile);
 			if (!file1.isFile())
 				file1.createNewFile();
