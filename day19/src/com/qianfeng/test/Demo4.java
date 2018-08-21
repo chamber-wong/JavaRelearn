@@ -3,32 +3,28 @@ package com.qianfeng.test;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.Arrays;
 
-/**
- * 一次读多个字符
- * 
- * @author 弄风
- *
+/*
+ * 实例:从文件中读取内容,并显示在控制台---FileReader
  */
 public class Demo4 {
 	public static void main(String[] args) throws IOException {
-		// 1.创建对象并关联文件
+		//1.创建对象并关联文件
 		FileReader fileReader = new FileReader("temp2.txt");
 		
-		//2.一次读多个字符:read(数组)
+		//2.读操作
 		/*
-		 * 数组是临时存放数据数据的地方,我们会将独到的字符放到临时数组中,数组的大小决定了我们一次可以读到的字符个数
-		 * 一般大小<=1kb
-		 * 返回值代表本次读到的真实的字符个数,如果返回值是-1代表读完了
-		 * 
+		 * read():一个字符一个字符的读
+		 * read(数组):一次可以读多个字符,将读到的多个字符会临时存储到数组中.
 		 */
-		char[] arr = new char[9];
-		int num = fileReader.read(arr);
-		num = fileReader.read();
-		System.out.println(Arrays.toString(arr));
+		//read():一个字符一个字符的读
+		//a:将当前的字符读出   b:将当前的指针后移一个字符
+		int num = 0;
+		while ((num = fileReader.read()) != -1) {
+			System.out.println((char)num);
+		}
 		
-		//3.关闭流
+		//关流
 		fileReader.close();
 	}
 }

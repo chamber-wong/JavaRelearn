@@ -1,0 +1,4 @@
+G:\JavaSE\qianfeng\day20\temp1.txt
+G:\JavaSE\qianfeng\day20\temp4.txt
+G:\JavaSE\qianfeng\day20\temp5.txt
+G:\JavaSE\qianfeng\day20\temp6.txt

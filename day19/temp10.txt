@@ -1,0 +1,111 @@
+package com.qianfeng.test;
+
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+
+public class Demo8 {
+	public static void main(String[] args) throws IOException {
+		/*
+		 * 字符缓冲读入流:BufferedReader
+		 */
+		//1.创建字符读入流
+		//2.创建字符缓冲读入流
+		BufferedReader bufferedReader = new BufferedReader(new FileReader("temp4.txt"));
+		
+		//3.开始读操作
+		//a:一次读一个字符
+		int num;
+//		while ((num = bufferedReader.read()) != -1) {
+//			System.out.print((char)num);
+//		}
+		//b:一次读多个字符
+//		char[] arr = new char[2];
+//		while ((num = bufferedReader.read(arr)) != -1) {
+//			System.out.print(new String(arr,0,num));
+//		}
+		//c:一次读一行  readLine()
+		//原理:一个字符一个字符的读,直到读到换行符为止.然后将所有读到的字符返回
+		//注意点:不会将当前的换行符返回 ;返回值就是我们读到的内容.如果读完了,返回null
+		String data = null;
+		while ((data = bufferedReader.readLine()) != null) {
+			System.out.print(data);
+			System.out.println();//换行
+		}
+		
+		//4.关闭流
+		bufferedReader.close();
+	}
+}
+package com.qianfeng.test;
+
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+//window下的换行是:\r\n     linux/Unix    \n
+public class Demo7 {
+	public static void main(String[] args) throws IOException {
+		/*
+		 * 字符缓冲流:(字符缓冲区)
+		 * 定义:为了提高读写的能力,本身没有读写的能力,要想进行读写就必须借助于字符流实现.
+		 * 
+		 * 可以将缓冲流类比于催化剂或者高速的小车
+		 * 
+		 * 字符缓冲流分类:
+		 * 字符缓冲读入流:BufferedReader   没有读的能力
+		 * 字符缓冲写出流:BufferedWriter   没有写的能力
+		 */
+		
+		//创建字符写出流
+		FileWriter fileWriter = new FileWriter("temp4.txt");
+		
+		//使用字符缓冲流实现写出
+		BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
+		
+		//写的操作
+		bufferedWriter.write("bingbing");
+		//bufferedWriter.write("\r\n");//window下的换行
+		bufferedWriter.newLine();//换行,可以实现跨平台
+		bufferedWriter.write("chenchen");
+		
+		//关闭缓冲流---1.关闭内部的写出流  2.刷新   3.将自己关闭
+		bufferedWriter.close();
+	}
+}	
+package com.qianfeng.test;
+
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+/*
+ * D:\workspace\BigData1712N20\src\com\qianfeng\test\Demo1.java:绝对路径
+ * BigData1712N20\src\com\qianfeng\test\Demo1.java:相对路径
+ * 
+ * 相对路径:从路径中间的某个部位开始一直到当前的文件
+ * 绝对路径:一个文件的完整路径,从根目录开始到当前的文件
+ * 
+ * 补充知识:
+ * \代表转义字符      \t:制表符     \n换行符    \\:表示普通的\
+ * 在代表路径的时候,\\与/是一个意思.
+ */
+
+public class Demo6 {
+	public static void main(String[] args) throws IOException {
+		/*
+		 * 实例:完成文件的复制
+		 */
+		//1.创建对象并关联文件
+		FileReader fileReader = new FileReader("D:\\workspace/BigData1712N20\\src\\com\\qianfeng\\test/Demo1.java");
+		FileWriter fileWriter = new FileWriter("temp3.txt");
+		
+		//读写
+		int num;
+		while ((num = fileReader.read()) != -1) {
+			fileWriter.write(num);//会自动转成字符
+		}
+		
+		fileReader.close();
+		fileWriter.close();
+	}
+}
